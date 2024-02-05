@@ -77,7 +77,7 @@
         </div>
     </nav>
     <div>
-        <button class="btn btn-outline-info p-2 m-3"  id="darkmode-btn">
+        <button class="btn btn-outline-info p-2 m-3" onclick="window.location.href='/Home/submit_request_page'" id="darkmode-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left"
                 viewBox="0 0 16 16">
                 <path
@@ -90,24 +90,24 @@
     <div class="fullpage row  justify-content-center ">
         <div class="w-50">
             <div class="row border m-3 rounded" id="option1-div">
-                <button class="btn w-100" id="opt1" type="button">
+                <a asp-controller="Home" asp-action="create_patient_request" class="btn w-100" id="opt1" type="button">
                     <span id="options">Patient</span>
-                </button>
+                </a>
             </div>
             <div class="row border m-3 rounded" id="option2-div">
-                <button class="btn w-100 " id="opt2" type="button">
+                <a asp-controller="Home" asp-action="Friend_family" class="btn w-100 " id="opt2" type="button">
                    <span>Family / Friends</span>
-                </button>
+                </a>
             </div>
             <div class="row border m-3 rounded " id="option3-div">
-                <button class="btn w-100" id="opt3" type="button">
+                <a asp-controller="Home" asp-action="Concierge_info" class="btn w-100" id="opt3" type="button">
                     <span>Concierge</span>
-                </button>
+                </a>
             </div>
             <div class="row border m-3 rounded" id="option4-div">
-                <button class="btn w-100" id="opt4" type="button">
+                <a asp-controller="Home" asp-action="Business_Info" class="btn w-100" id="opt4" type="button">
                     <span id="options">Business Partners</span>
-                </button>
+                </a>
             </div>
         </div>
         <div class="justify-content-center row align-items-center">

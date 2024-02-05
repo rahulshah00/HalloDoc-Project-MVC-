@@ -43,6 +43,24 @@ namespace HalloDoc_Project.Controllers
             return View();
         }
 
+        public IActionResult Business_Info()
+        {
+            return View();
+        }
+        public IActionResult Concierge_info()
+        {
+            return View();
+        }
+
+        public IActionResult Friend_family()
+        {
+            return View();
+        }
+
+        public IActionResult submit_request_page()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
