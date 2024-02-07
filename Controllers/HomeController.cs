@@ -1,4 +1,6 @@
-﻿using HalloDoc_Project.Models;
+﻿using HalloDoc_Project.DataContext;
+using HalloDoc_Project.DataModels;
+using HalloDoc_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +9,10 @@ namespace HalloDoc_Project.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationDbContext _context;
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -36,6 +38,24 @@ namespace HalloDoc_Project.Controllers
         }
         public IActionResult login_page()
         {
+            return View();
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult login_page(Aspnetuser demouser)
+        {
+            var  obj = _context.Aspnetusers.ToList();
+
+            foreach (var item in obj)
+            {
+                if(demouser.Username == item.Username && demouser.Passwordhash == item.Passwordhash)
+                {
+                   return View("create_patient_request"); 
+                   
+                }
+            }
             return View();
         }
         public IActionResult patient_site()
