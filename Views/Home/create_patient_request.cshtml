@@ -1,3 +1,4 @@
+@model PatientModel
 @{
     Layout = "_formpages";
 }
@@ -118,13 +119,13 @@
     <br>
     <div class="row mb-4 d-flex justify-content-center">
         <div class="col-11 col-md-10 col-lg-9 shadow-lg">
-            <form action="#" method="post">
+            <form  method="post">
                 <div class="row ">
                     <h5 for="" class="mt-4">Patient Information</h5>
                 </div>
                 <div class="row mt-4">
                     <div class="col form-floating ">
-                        <textarea name="" class="t form-control" id="forfloatingtextarea"
+                        <textarea asp-for="Symptoms" class="t form-control" id="forfloatingtextarea"
                                   placeholder="Enter Brief Details Of Symptoms(Optional)" style="height: 15vh;" cols="20"
                                   rows="5"></textarea>
                         <label for="forfloatingtextarea" class="ms-2">Enter Brief Details Of Symptoms(Optional)</label>
@@ -132,17 +133,17 @@
                 </div>
                 <div class="row">
                     <div class="col-11 mt-4 col-sm-6 form-floating ">
-                        <input type="text" placeholder="First Name" class="t  form-control" id="fname">
+                        <input type="text" asp-for="FirstName" placeholder="First Name" class="t  form-control" id="fname">
                         <label for="fname" class="ms-2">First Name</label>
                     </div>
                     <div class="col-11 col-sm-6 mt-4 form-floating  ">
-                        <input type="text" placeholder="Last Name" class="t form-control" id="lname">
+                        <input type="text" asp-for="LastName" placeholder="Last Name" class="t form-control" id="lname">
                         <label for="lname" class="ms-2">Last Name</label>
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-11 col-sm-6  mt-4 form-floating">
-                        <input type="date" placeholder="Date Of Birth" class="t form-control" id="DOB">
+                        <input type="date" asp-for="DateOfBirth" placeholder="Date Of Birth" class="t form-control" id="DOB">
                         <label for="DOB" class="ms-2">Date Of Birth</label>
                     </div>
                 </div>
@@ -152,7 +153,7 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="email" placeholder="Email" class=" t form-control" id="emailfloat">
+                            <input type="email" asp-for="Email" placeholder="Email" class=" t form-control" id="emailfloat">
                             <label for="emailfloat">Email</label>
                         </div>
                     </div>
@@ -160,7 +161,7 @@
 
 
                         <div class="form-floating ">
-                            <input id="patient-phone" class="form-control" type="tel" name="phone1" />
+                            <input id="patient-phone" asp-for="PhoneNo" class="form-control" type="tel" name="phone1" />
                         </div>
 
                     </div>
@@ -171,14 +172,14 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="email" class="t form-control" id="floatingEmail" placeholder="Email ">
+                            <input type="email" asp-for="Street" class="t form-control" id="floatingEmail" placeholder="Email ">
                             <label for="floatingEmail">Email address</label>
                         </div>
 
                     </div>
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="floatingCity" placeholder="City">
+                            <input type="text" asp-for="City" class="t  form-control" id="floatingCity" placeholder="City">
                             <label for="floatingCity">City</label>
                         </div>
                     </div>
@@ -187,13 +188,13 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="floatingState" placeholder="state">
+                            <input type="text" asp-for="State" class="t  form-control" id="floatingState" placeholder="state">
                             <label for="floatingState">State</label>
                         </div>
                     </div>
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="number" class="t  form-control" id="floatingZip" placeholder="zip">
+                            <input type="number" asp-for="ZipCode" class="t  form-control" id="floatingZip" placeholder="zip">
                             <label for="floatingZip">Zip Code</label>
                         </div>
                     </div>
@@ -201,7 +202,7 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="floatingRoom" placeholder="Room">
+                            <input type="text" asp-for="RoomSuite" class="t  form-control" id="floatingRoom" placeholder="Room">
                             <label for="floatingRoom">Room # / Suite (Optional)</label>
                         </div>
                     </div>
@@ -225,7 +226,7 @@
                                 </svg>
                                 Upload
                             </label>
-                            <input type="file" id="fileLoader">
+                            <input type="file"  asp-for="FilePath" id="fileLoader">
                         </div>
                     </div>
                     <div class="row  text-end">

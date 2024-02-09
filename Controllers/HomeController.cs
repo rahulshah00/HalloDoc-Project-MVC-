@@ -1,9 +1,10 @@
-﻿using HalloDoc_Project.DataContext;
-using HalloDoc_Project.DataModels;
+﻿using DAL.DataModels;
 using HalloDoc_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-
+using DAL.DataContext;
+using DAL.ViewModels;
+using Microsoft.EntityFrameworkCore;
 namespace HalloDoc_Project.Controllers
 {
     public class HomeController : Controller
@@ -32,6 +33,52 @@ namespace HalloDoc_Project.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult create_patient_request(PatientModel pm)
+        {
+            //var newvm=new PatientModel();
+            Aspnetuser user = new Aspnetuser();
+            
+            string id=Guid.NewGuid().ToString();
+            user.Id = id;
+            user.Email = pm.Email;
+            user.Phonenumber = pm.PhoneNo;
+            user.Username = pm.FirstName;
+            user.Createddate = DateTime.Now;
+            
+            //user.Modifieddate = DateTime.Now;
+            
+            User user_obj=new User();
+            user_obj.Firstname=pm.FirstName;
+            user_obj.Lastname = pm.LastName;
+            user_obj.Email=pm.Email;
+            user_obj.Mobile = pm.PhoneNo;
+            user_obj.Street = pm.Street;
+            user_obj.City= pm.City; 
+            user_obj.State= pm.State;
+            user_obj.Zipcode = pm.ZipCode;
+            user_obj.Createddate = DateTime.Now;
+            //user_obj.Modifiedby = null;
+
+            
+            Request request = new Request();
+            request.Firstname = pm.FirstName;
+            request.Lastname = pm.LastName;
+            request.Phonenumber=pm.PhoneNo; 
+            request.Email=pm.Email;
+            request.Createddate = DateTime.Now;
+            request.Patientaccountid = id;
+
+            Requestclient rc = new Requestclient();
+            
+
+
+            _context.Aspnetusers.Add(user);
+            _context.SaveChanges();
+            return RedirectToAction("create_patient_request","Home");
+         }
+        
         public IActionResult forgot_password_page()
         {
             return View();
@@ -46,18 +93,16 @@ namespace HalloDoc_Project.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult login_page(Aspnetuser demouser)
         {
-            var  obj = _context.Aspnetusers.ToList();
 
-            foreach (var item in obj)
+            Aspnetuser v = _context.Aspnetusers.FirstOrDefault(dt => dt.Username == demouser.Username && dt.Passwordhash == demouser.Passwordhash);
+            if (v != null)
             {
-                if(demouser.Username == item.Username && demouser.Passwordhash == item.Passwordhash)
-                {
-                   return View("create_patient_request"); 
-                   
-                }
+                return RedirectToAction("Business_Info");
             }
+
             return View();
         }
+
         public IActionResult patient_site()
         {
             return View();

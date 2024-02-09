@@ -1,4 +1,4 @@
-using HalloDoc_Project.DataContext;
+using DAL.DataContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
