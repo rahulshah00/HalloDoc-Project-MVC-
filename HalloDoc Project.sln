@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HalloDoc Project", "HalloDoc Project.csproj", "{A5E667EB-5225-4393-B8C6-2F26291869D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "..\BAL\BAL.csproj", "{158F4D1A-D74D-4923-8836-F1C65946FDA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BAL", "..\BAL\BAL.csproj", "{158F4D1A-D74D-4923-8836-F1C65946FDA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{CBCD2C5B-4E27-48E7-9350-73B88C1D7E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "..\DAL\DAL.csproj", "{CBCD2C5B-4E27-48E7-9350-73B88C1D7E78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

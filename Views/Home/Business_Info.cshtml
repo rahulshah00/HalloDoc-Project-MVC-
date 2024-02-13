@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BusinessModel
+@{
     Layout = "_formpages";
 }
 <!doctype html>
@@ -72,22 +73,22 @@
     <br>
     <div class="row mb-4 d-flex justify-content-center">
         <div class="col-11 col-md-10 col-lg-9 shadow-lg">
-            <form action="#" method="post">
+            <form method="post">
                 <div class="row mt-4">
                     <h5>Business Information</h5>
                 </div>
                 <div class="row">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t form-control" id="YourFname" placeholder="Your First Name ">
-                            <label for="YourFname">Your First Name</label>
+                            <input type="text" asp-for="BsFirstName" class="t form-control" id="YourFname" placeholder="Your First Name ">
+                            <label for="YourFname">First Name</label>
                         </div>
 
                     </div>
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="YourLName" placeholder="Your Last Name">
-                            <label for="YourLName">Your Last Name</label>
+                            <input type="text" asp-for="BsLastName" class="t  form-control" id="YourLName" placeholder="Your Last Name">
+                            <label for="YourLName">Last Name</label>
                         </div>
                     </div>
                 </div>
@@ -95,12 +96,12 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating mt-3">
-                            <input id="business-phone" class="form-control" type="tel" name="phone1"></input>
+                            <input id="business-phone" asp-for="BsPhoneNo" class="form-control" type="tel" name="phone1"></input>
                         </div>
                     </div>
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="email" class="t  form-control" id="email" placeholder="Your Email">
+                            <input type="email" asp-for="BsEmail" class="t  form-control" id="email" placeholder="Your Email">
                             <label for="email">Your Email</label>
                         </div>
                     </div>
@@ -108,14 +109,14 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="property" placeholder="Room">
+                            <input type="text" asp-for="BusinessName" class="t  form-control" id="property" placeholder="Room">
                             <label for="property">Business/Property Name</label>
                         </div>
                     </div>
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="Case ID" placeholder="Room">
-                            <label for="Case ID">Case-ID(Optional)</label>
+                            <input type="text" asp-for="BsCaseNo" class="t  form-control" id="Case ID" placeholder="Room">
+                            <label for="Case ID">Case Number (Optional)</label>
                         </div>
                     </div>
                 </div>
@@ -124,7 +125,7 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col form-floating ">
-                        <textarea name="" class="t form-control" id="forfloatingtextarea"
+                        <textarea asp-for="Symptoms" class="t form-control" id="forfloatingtextarea"
                                   placeholder="Enter Brief Details Of Symptoms(Optional)" style="height: 15vh;" cols="20"
                                   rows="5"></textarea>
                         <label for="forfloatingtextarea" class="ms-2">Enter Brief Details Of Symptoms(Optional)</label>
@@ -132,17 +133,17 @@
                 </div>
                 <div class="row">
                     <div class="col-11 mt-4 col-sm-6 form-floating ">
-                        <input type="text" placeholder="First Name" class="t  form-control" id="fname">
+                        <input asp-for="PtFirstName" type="text" asp-for"" placeholder="First Name" class="t  form-control" id="fname">
                         <label for="fname" class="ms-2">First Name</label>
                     </div>
                     <div class="col-11 col-sm-6 mt-4 form-floating  ">
-                        <input type="text" placeholder="Last Name" class="t form-control" id="lname">
+                        <input type="text" asp-for="PtLastName" placeholder="Last Name" class="t form-control" id="lname">
                         <label for="lname" class="ms-2">Last Name</label>
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-11 col-sm-6  mt-4 form-floating">
-                        <input type="date" placeholder="Date Of Birth" class="t form-control" id="DOB">
+                        <input type="date" asp-for="PtDOB" placeholder="Date Of Birth" class="t form-control" id="DOB">
                         <label for="DOB" class="ms-2">Date Of Birth</label>
                     </div>
                 </div>
@@ -152,13 +153,13 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="email" placeholder="Email" class=" t form-control" id="emailfloat">
+                            <input type="email" asp-for="PtEmail" placeholder="Email" class=" t form-control" id="emailfloat">
                             <label for="emailfloat">Email</label>
                         </div>
                     </div>
                     <div class="col-11 col-sm-6 mt-4 ">
                         <div class="form-floating ">
-                            <input id="patient-phone" class="form-control" type="tel" name="phone1"></input>
+                            <input id="patient-phone" asp-for="PtPhoneNo" class="form-control" type="text" name="phone1"></input>
                         </div>
                     </div>
                 </div>
@@ -168,14 +169,14 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="email" class="t form-control" id="floatingEmail" placeholder="Email ">
-                            <label for="floatingEmail">Email address</label>
+                            <input type="text" asp-for="Street" class="t form-control" id="floatingEmail" placeholder="Email ">
+                            <label for="floatingEmail">Street</label>
                         </div>
 
                     </div>
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="floatingCity" placeholder="City">
+                            <input type="text" asp-for="city" class="t  form-control" id="floatingCity" placeholder="City">
                             <label for="floatingCity">City</label>
                         </div>
                     </div>
@@ -184,13 +185,13 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="floatingState" placeholder="state">
+                            <input type="text" asp-for="state" class="t  form-control" id="floatingState" placeholder="state">
                             <label for="floatingState">State</label>
                         </div>
                     </div>
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="number" class="t  form-control" id="floatingZip" placeholder="zip">
+                            <input type="number" asp-for="zipcode" class="t  form-control" id="floatingZip" placeholder="zip">
                             <label for="floatingZip">Zip Code</label>
                         </div>
                     </div>
@@ -198,7 +199,7 @@
                 <div class="row ">
                     <div class="col-11 col-sm-6 mt-4">
                         <div class="form-floating">
-                            <input type="text" class="t  form-control" id="floatingRoom" placeholder="Room">
+                            <input type="text" asp-for="room" class="t  form-control" id="floatingRoom" placeholder="Room">
                             <label for="floatingRoom">Room # / Suite (Optional)</label>
                         </div>
                     </div>
