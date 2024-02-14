@@ -1,98 +1,24 @@
 ﻿@model User
 @{
-    // Layout="_formpages";
+    Layout="PatientDashboardLayout";
 }
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Oswald:wght@200..700&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Honk:MORF@4&family=Oswald:wght@200..700&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Foldit:wght@100..900&f amily=Honk:MORF@4&family=Oswald:wght@200..700&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <style>
-        *{
-            font-family:'poppins';   
-        }
-        #darkmode:hover svg
-        {
-            fill:white;
-        }
-        
-        .nav-tabs .active
-        {
-            border:none;
-            color:#10bce9 !important;
-            border-bottom:5px solid #10bce9 !important;
-
-        }
-
-        [data-bs-theme="dark"] .nav-link {
-            color:white;
-        }
-
-        [data-bs-theme="dark"] .tr-info th {
-            color: white;
-            background-color:darkslategrey; 
-            
-        }
-
-        [data-bs-theme="light"] .nav-link {
-            color:black;
-        }
-        .tr-info th{
-            background-color:#f0f0f0;
-            font-weight:500;
-            color:black;
-        }
-        tr{
-            height:50px
-        }
-        
-        .createNewRequest:hover 
-        {
-            color:white;
-        }
-        .btn-outline-info:hover
-        {
-            color: white;
-        }
-
-        
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />" 
+    <link rel="stylesheet" href="~/css/PatientDashboardCSS.css" />
 </head>
 <body>
-    <nav class="navbar ps-3  d-flex border-1 rounded ">
-        @* <div class="w-100 align-items-center" style="display:contents;">
-            <div>
-                <a href="/" class="navbar-brand">
-                    <img src="/SRS Screen Shorts/HalloDoc LOGO.png" alt="" height="80vh">
-                </a>
-            </div>
-            <div class="justify-content-end me-3">
-                <button class="btn" onclick="darkMode()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#10bce9"
-                         class="bi bi-moon-fill" viewBox="0 0 16 16">
-                        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
-                    </svg>
-                </button>
-            </div>
-        </div> *@
+    @* <nav class="navbar ps-3  d-flex border-1 rounded ">
+         
             <div class="">
                 <a href="/">
                     <img src="~/SRS Screen Shorts/HalloDoc LOGO.png" height="80vh"/>
@@ -125,7 +51,7 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link tabs" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" tabindex="-1">Profile</button>
             </li>
-        </ul>
+        </ul> *@
         <div class="tab-content px-5" id="myTabContent">
             <div class="tab-pane fade pt-2 active show justify-content-center" id="home" role="tabpanel" aria-labelledby="home-tab">
                 
@@ -163,16 +89,14 @@
                             <td>Larry</td>
                             <td>the Bird</td>
                             <td>
-                                    <button class="btn btn-outline-info">
-                                        (1) Documents
-                                    </button>
-                                </td>
+                                <a asp-controller="Home" asp-action="ViewDocuments" class="btn btn-outline-info">
+                                    (1) Documents
+                                </a>
+                            </td>
                         </tr>
-                    
-                    
                         <tr>
                             <td>Mark</td>
-                            <td>Otto</td>
+                            <td>Otto</td>   
                             <td></td>
                         </tr>
                         <tr>
@@ -185,15 +109,14 @@
                             <td>the Bird</td>
                             <td></td>        
                         </tr>
-                        
                     </tbody>
                 </table>
                 </div>
             </div>
-            <div class="tab-pane fade pt-2" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile</div>
+            <div class="tab-pane fade pt-2" id="profile" role="tabpanel" aria-labelledby="profile-tab"> trial </div>
             
         </div>
-    </div>
+    @* </div> *@
     
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

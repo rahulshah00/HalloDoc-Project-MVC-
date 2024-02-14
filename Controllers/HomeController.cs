@@ -214,10 +214,12 @@ namespace HalloDoc_Project.Controllers
             _context.SaveChanges();
             return RedirectToAction("PatientDashboard");
         }
+
         public IActionResult Concierge_info()
         {
             return View();
         }
+        
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public IActionResult Concierge_info(ConciergeModel cm)
@@ -316,6 +318,10 @@ namespace HalloDoc_Project.Controllers
         }
 
         public IActionResult submit_request_page()
+        {
+            return View();
+        }
+        public IActionResult ReviewAgreement()
         {
             return View();
         }
